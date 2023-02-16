@@ -3,41 +3,24 @@ using namespace std;
 
 main()
 {
-    int size;
-    cin >> size; 
-
     int ctr = 0;
 
-    int * lab = new int [size];
+    int pre_num = 0;
 
-    for (int i = 0; i < size; i++)
+    while(ctr < 3)
     {
-        cin >> lab[i];  
-    }
-    
-    
-    for (int i = 0; ctr < 3; i++)
-    {
-        if (lab[i] == 42)
+        int num;
+        cin >> num;
+
+        cout << num << endl;
+
+        if (num == 42 && pre_num != 42)
         {
-            if(lab[i-1] == 42)
-            {
-                cout << lab[i] <<endl;
-            }
-            else
-            {   
-                cout << lab[i] <<endl;
-                ctr++;
-            }
-        }
-        else 
-        {
-            cout << lab[i] <<endl;
+            ctr++;
         }
 
-
+        pre_num = num;
     }
-    delete [] lab;
 
     return 0;
 }
